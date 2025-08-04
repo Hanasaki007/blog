@@ -15,7 +15,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
-  base: '/vue3-music/',
+  base: '/blog/',
   build: {
     outDir: 'docs'
   }
