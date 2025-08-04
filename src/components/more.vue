@@ -1,6 +1,6 @@
 <template>
 <div class="info">
-  <h1 style="color: whitesmoke;">暂无数据</h1>
+  <h1 style="color: black;">暂无数据</h1>
 </div>
 </template>
 

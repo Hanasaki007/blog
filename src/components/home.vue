@@ -76,11 +76,11 @@ a{
   position: relative;
   left: 20px;
   text-decoration: none;
-  color: black;
+  color: blue;
   transition:0.5s 0s linear all;
 }
 a:hover{
-  color: blue;
+  color: black;
 }
 .video-area{
   width: 100%;

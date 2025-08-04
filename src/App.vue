@@ -2,10 +2,10 @@
   <div class="container">
     <!-- banner部分 -->
     <div class="banner">
-      <RouterLink :to="{name:'home'}" class="btn1">
+      <RouterLink :to="{name:'home'}" class="btn1" active-class="active-btn">
         <button>首页</button>
       </RouterLink>
-      <RouterLink :to="{name:'more'}" class="btn2">
+      <RouterLink :to="{name:'more'}" class="btn2" active-class="active-btn">
         <button>更多</button>
       </RouterLink>
     </div>
@@ -40,7 +40,7 @@ body{
   margin: 0 auto;
   width: 1000px;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .banner{
   width: 100%;
@@ -57,6 +57,7 @@ h1{
   text-align: center;
   /* background-color: blue; */
   margin: 0;
+  color: black;
 }
 .view{
   height: 650px;
@@ -82,6 +83,11 @@ button{
   background-color: rgba(255,255,255,0.2);
   font-size: 14px;
   transition:0.5s 0s linear all;
+}
+/* 激活路由按钮样式 */
+.active-btn button {
+  background-color: rgba(0,0,0,0.5) !important;
+  color: white;
 }
 button:hover{
   background-color: rgba(0,0,0,0.2);
