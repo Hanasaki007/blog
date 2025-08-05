@@ -45,7 +45,7 @@ body{
 .banner{
   width: 100%;
   height: 50px;
-  /* background-color: gray; */
+  background-color: rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
   justify-content: center;
