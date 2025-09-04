@@ -30,17 +30,20 @@ import { RouterLink,RouterView } from 'vue-router';
 body{
   margin: 0;
   padding: 0;
-  min-height: 100vh;
-  background-image: url('./assets/background.jpg');
+  height: 100vh;
+  background-image: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);
+  /* background-image: url('./assets/background.jpg'); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 .container{
   margin: 0 auto;
-  width: 1000px;
+  width: 80vw;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0,0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 .banner{
   width: 100%;
@@ -57,10 +60,10 @@ h1{
   text-align: center;
   /* background-color: blue; */
   margin: 0;
-  color: black;
+  color: whitesmoke;
 }
 .view{
-  height: 650px;
+  height: 80%;
   width: 100%;
   margin-top: 20px;
   /* background-color: skyblue; */
@@ -80,13 +83,16 @@ button{
   height: 40px;
   width: 60px;
   border-radius: 10px;
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255,255,255,0.1);
   font-size: 14px;
   transition:0.5s 0s linear all;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: rgba(255, 255, 255, 0.3);
 }
 /* 激活路由按钮样式 */
 .active-btn button {
-  background-color: rgba(0,0,0,0.5) !important;
+  background-color: rgba(0,0,0,0.1) !important;
   color: white;
 }
 button:hover{

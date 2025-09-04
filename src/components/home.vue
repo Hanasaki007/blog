@@ -1,14 +1,14 @@
 <template>
 <div class="info">
-  <img src="../assets/me.jpg" alt="我的头像" class="avatar">
-  <div class="right">
-    <div class="right-left">
+  <div class="link">
+    <div class="left">
       <img src="../assets/github.png" alt="github主页" class="github">
-      <a href="https://github.com/Hanasaki007" target="_blank">我的GitHub</a>
+      <a href="https://github.com/Hanasaki007" target="_blank" class="lefta">我的GitHub</a>
     </div>
-    <div class="right-right">
+    <img src="../assets/me.jpg" alt="我的头像" class="avatar">
+    <div class="right">
+      <a href="https://space.bilibili.com/392534081/dynamic" target="_blank" class="righta">我的bilibili</a>
       <img src="../assets/bilibili.png" alt="bilibili主页" class="bilibili">
-      <a href="https://space.bilibili.com/392534081/dynamic" target="_blank">我的bilibili</a>
     </div>
   </div>
 </div>
@@ -32,33 +32,33 @@
   display: flex;
   overflow: hidden;
   align-items: center;
+  justify-content: center;
 }
 .avatar{
   width: 120px;
   height: 120px;
   border-radius: 100%;
   position: relative;
-  left: 25%;
+  margin: 0 20%;
 }
-.right{
+.link{
   height: 100%;
-  width: 400px;
+  width: 50%;
   /* background-color: red; */
   position: relative;
-  left: 28%;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.right-left{
+.left{
   /* background-color: blue; */
   height: 100%;
-  width: 100%;
   display: flex;
   align-items: center;
 }
-.right-right{
+.right{
   /* background-color: greenyellow; */
   height: 100%;
-  width: 100%;
   display: flex;
   align-items: center;
 }
@@ -71,7 +71,7 @@
   width: 40px;
   height: 40px;
 }
-a{
+.lefta{
   display: inline-block;
   position: relative;
   left: 20px;
@@ -80,7 +80,15 @@ a{
   transition:0.5s 0s linear all;
 }
 a:hover{
-  color: black;
+  color: white;
+}
+.righta{
+  display: inline-block;
+  position: relative;
+  right: 20px;
+  text-decoration: none;
+  color: blue;
+  transition:0.5s 0s linear all;
 }
 .video-area{
   width: 100%;
@@ -91,11 +99,14 @@ a:hover{
 .video-title{
   text-align: center;
   margin: 0;
+  color: whitesmoke;
   /* background-color: aqua; */
 }
 .video{
-  width: 700px;
-  height: 465px;
+  /* width: 700px;
+  height: 465px; */
+  width: 80%;
+  height: 70%;
   margin: 0 auto;
   border-radius: 10px;
   border: 1px solid black;
