@@ -41,6 +41,7 @@
   border-radius: 100%;
   position: relative;
   margin: 0 20%;
+  right: 3px;
 }
 .link{
   height: 100%;
@@ -77,23 +78,42 @@
   position: relative;
   left: 20px;
   text-decoration: none;
-  color: blue;
-  transition:0.5s 0s linear all;
+  color: #4fc3f7;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
-a:hover{
+.lefta:hover{
   color: white;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 .righta{
   display: inline-block;
   position: relative;
   right: 20px;
   text-decoration: none;
-  color: blue;
-  transition:0.5s 0s linear all;
+  color: #f44336;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.righta:hover{
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 .video-area{
   width: 100%;
-  height: calc(100% - 150px - 20px); /* 调整高度计算方式，减去额外的20px用于底部间距 */
+  height: calc(100% - 150px - 15px); /* 调整高度计算方式，减去额外的20px用于底部间距 */
   /* background-color: blue; */
   /* background-color: rgba(0, 0, 0, 0.1); */
 }
@@ -104,9 +124,8 @@ a:hover{
   /* background-color: aqua; */
 }
 .video{
-
   width: 90%;
-  height: calc(100% - 40px - 20px); /* 调整高度计算方式，保留底部空间 */
+  height: calc(100% - 40px - 15px); /* 调整高度计算方式，保留底部空间 */
   margin: 20px auto;
   border-radius: 10px;
   border: 1px solid black;
@@ -117,5 +136,91 @@ iframe{
   width: 100%;
   height: 100%;
 }
-</style>
 
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+  .info {
+    height: 150px;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+    margin: 0 10%;
+    position: relative;
+    left: 1px;
+  }
+
+  .github, .bilibili {
+    width: 30px;
+    height: 30px;
+  }
+
+  .lefta{
+    padding: 6px 12px;
+    font-size: 14px;
+    left: 10px;
+    /* right: 10px; */
+  }
+
+  .righta {
+    padding: 6px 12px;
+    font-size: 14px;
+    /* left: 10px; */
+    right: 10px;
+  }
+
+  .video-area {
+    height: calc(100% - 120px - 25px);
+  }
+
+  .video-title {
+    font-size: 16px;
+  }
+
+  .video {
+    width: 95%;
+    height: calc(100% - 30px - 25px);
+    margin: 10px auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .info {
+    height: 120px;
+    flex-direction: column;
+  }
+
+  .link {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .left, .right {
+    width: 40%;
+    justify-content: center;
+  }
+
+  .avatar {
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    position: relative;
+    left: 1px;
+  }
+
+  .lefta, .righta {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .github, .bilibili {
+    width: 25px;
+    height: 25px;
+  }
+
+  .video-title {
+    font-size: 14px;
+  }
+}
+</style>

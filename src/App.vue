@@ -100,22 +100,76 @@ h1{
 button{
   margin: 0 20px;
   height: 40px;
-  width: 60px;
-  border-radius: 10px;
-  background-color: rgba(255,255,255,0.1);
-  font-size: 14px;
-  transition:0.5s 0s linear all;
+  width: 80px;
+  border-radius: 20px;
+  background-color: rgba(255,255,255,0.15);
+  font-size: 16px;
+  transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 /* 激活路由按钮样式 */
 .active-btn button {
-  background-color: rgba(0,0,0,0.1) !important;
+  background: linear-gradient(45deg, #FF1361, #FF8C00);
   color: white;
+  box-shadow: 0 4px 15px rgba(255, 19, 97, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 button:hover{
-  background-color: rgba(0,0,0,0.2);
-  cursor: pointer;
+  background-color: rgba(255,255,255,0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+.active-btn button:hover {
+  background: linear-gradient(45deg, #ff2a70, #ff9800);
+  box-shadow: 0 6px 20px rgba(255, 19, 97, 0.6);
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .banner {
+    height: 60px;
+  }
+
+  button {
+    margin: 0 10px;
+    height: 40px;
+    width: 70px;
+    font-size: 14px;
+  }
+
+  .title h1 {
+    font-size: 20px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .view {
+    margin-top: 10px;
+    border-radius: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  button {
+    margin: 0 5px;
+    height: 35px;
+    width: 60px;
+    font-size: 12px;
+  }
+
+  .title h1 {
+    font-size: 18px;
+  }
 }
 </style>
