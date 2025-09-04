@@ -23,6 +23,20 @@
 
 <script setup lang="ts">
 import { RouterLink,RouterView } from 'vue-router';
+import { onMounted } from 'vue';
+
+// 检测是否为移动设备
+const isMobile = () => {
+  const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+  return /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase());
+};
+
+// 在组件挂载时检测设备类型
+onMounted(() => {
+  if (isMobile()) {
+    alert('建议使用电脑打开以获得更好的浏览体验');
+  }
+});
 
 </script>
 
