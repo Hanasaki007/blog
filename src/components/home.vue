@@ -25,10 +25,11 @@
 </script>
 
 <style scoped>
+
 .info{
   width: 100%;
   height: 150px;
-  background-color: rgba(0, 0, 0, 0.1);
+  /* background-color: rgba(0, 0, 0, 0.1); */
   display: flex;
   overflow: hidden;
   align-items: center;
@@ -92,9 +93,9 @@ a:hover{
 }
 .video-area{
   width: 100%;
-  height: 100%;
+  height: calc(100% - 150px - 20px); /* 调整高度计算方式，减去额外的20px用于底部间距 */
   /* background-color: blue; */
-  background-color: rgba(0, 0, 0, 0.1);
+  /* background-color: rgba(0, 0, 0, 0.1); */
 }
 .video-title{
   text-align: center;
@@ -103,11 +104,10 @@ a:hover{
   /* background-color: aqua; */
 }
 .video{
-  /* width: 700px;
-  height: 465px; */
-  width: 80%;
-  height: 70%;
-  margin: 0 auto;
+
+  width: 90%;
+  height: calc(100% - 40px - 20px); /* 调整高度计算方式，保留底部空间 */
+  margin: 20px auto;
   border-radius: 10px;
   border: 1px solid black;
   overflow: hidden;
@@ -118,3 +118,4 @@ iframe{
   height: 100%;
 }
 </style>
+

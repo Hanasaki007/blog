@@ -50,25 +50,30 @@ body{
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  overflow: hidden; /* 添加此行以隐藏滚动条 */
 }
 .container{
   margin: 0 auto;
-  width: 80vw;
+  width: 90vw;
   height: 100vh;
   background: rgba(0, 0, 0,0.3);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column; /* 添加此行以使用flex布局 */
 }
 .banner{
   width: 100%;
   height: 50px;
-  background-color: rgba(0, 0, 0, 0.05);
+  /* background-color: rgba(0, 0, 0, 0.05); */
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0; /* 防止在flex布局中收缩 */
 }
 .title{
   height: 50px;
+  flex-shrink: 0; /* 防止在flex布局中收缩 */
 }
 h1{
   text-align: center;
@@ -77,7 +82,7 @@ h1{
   color: whitesmoke;
 }
 .view{
-  height: 80%;
+  flex: 1; /* 修改为flex: 1以自动填充剩余空间 */
   width: 100%;
   margin-top: 20px;
   /* background-color: skyblue; */
