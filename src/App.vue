@@ -2,10 +2,10 @@
   <div class="container">
     <!-- banner部分 -->
     <div class="banner">
-      <RouterLink :to="{name:'home'}" class="btn1" active-class="active-btn">
+      <RouterLink replace :to="{name:'home'}" class="btn1" active-class="active-btn">
         <button>首页</button>
       </RouterLink>
-      <RouterLink :to="{name:'more'}" class="btn2" active-class="active-btn">
+      <RouterLink replace :to="{name:'more'}" class="btn2" active-class="active-btn">
         <button>更多</button>
       </RouterLink>
     </div>
@@ -104,7 +104,7 @@ button{
   border-radius: 20px;
   background-color: rgba(255,255,255,0.15);
   font-size: 16px;
-  transition: all 0.3s ease;
+  transition: all 0.8s;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   color: rgba(255, 255, 255, 0.8);
@@ -118,10 +118,11 @@ button{
   color: white;
   box-shadow: 0 4px 15px rgba(255, 19, 97, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.8s;
 }
 button:hover{
   background-color: rgba(255,255,255,0.25);
-  transform: translateY(-2px);
+  /* transform: translateY(-2px); */
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 .active-btn button:hover {

@@ -78,7 +78,8 @@
   position: relative;
   left: 20px;
   text-decoration: none;
-  color: #4fc3f7;
+  /* color: #4fc3f7; */
+  color: #f44336;
   transition: all 0.3s ease;
   padding: 8px 16px;
   border-radius: 20px;
@@ -97,7 +98,8 @@
   position: relative;
   right: 20px;
   text-decoration: none;
-  color: #f44336;
+  /* color: #f44336; */
+  color: #4fc3f7;
   transition: all 0.3s ease;
   padding: 8px 16px;
   border-radius: 20px;
