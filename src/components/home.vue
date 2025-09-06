@@ -2,6 +2,8 @@
 <div class="info">
   <div class="link">
     <div class="left">
+      <!-- 添加 ref 属性以便在 JavaScript 中引用该元素 -->
+      <button id="leftBtn" class="leftBtn" @click="showG" ref="leftBtnRef">展示</button>
       <img src="../assets/github.png" alt="github主页" class="github">
       <a href="https://github.com/Hanasaki007" target="_blank" class="lefta">我的GitHub</a>
     </div>
@@ -9,18 +11,58 @@
     <div class="right">
       <a href="https://space.bilibili.com/392534081/dynamic" target="_blank" class="righta">我的bilibili</a>
       <img src="../assets/bilibili.png" alt="bilibili主页" class="bilibili">
+      <button id="rightBtn" class="rightBtn" @click="showB" ref="rightBtnRef">展示</button>
     </div>
   </div>
 </div>
 <div class="video-area">
-  <h3 class="video-title">最新视频</h3>
+  <h3 @click="showvideo" class="video-title" id="video-title" ref="videoBtnRef">最新视频</h3>
   <div class="video">
-    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=114676398628821&bvid=BV1NYMBz9ERs&cid=30478241609&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+    <iframe :src="videoSrc" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
   </div>
 </div>
 </template>
 
 <script setup lang="ts">
+import { ref} from 'vue'
+
+// 创建模板引用
+const leftBtnRef = ref<HTMLButtonElement | null>(null);
+const rightBtnRef = ref<HTMLButtonElement | null>(null);
+const videoBtnRef = ref<HTMLHeadingElement | null>(null);
+
+// 默认视频地址
+const videoSrc = ref('//player.bilibili.com/player.html?isOutside=true&aid=114676398628821&bvid=BV1NYMBz9ERs&cid=30478241609&p=1')
+
+// 点击"在下方显示"按钮时切换到另一个网址
+const showG = () => {
+  videoSrc.value = 'https://github.com/Hanasaki007' // 替换为实际需要的网址
+  // 使用模板引用修改样式
+  if (leftBtnRef.value&&rightBtnRef.value&&videoBtnRef.value) {
+    leftBtnRef.value.style.background = 'linear-gradient(45deg, #FF1361, #FF8C00)';
+    rightBtnRef.value.style.background = 'rgba(255, 255, 255, 0.15)';
+    videoBtnRef.value.style.background = 'rgba(255, 255, 255, 0.15)';
+  }
+}
+
+// 点击另一个按钮时可以切换回默认地址或其他地址
+const showB = () => {
+  videoSrc.value = 'https://space.bilibili.com/392534081/dynamic'
+  if (leftBtnRef.value&&rightBtnRef.value&&videoBtnRef.value) {
+    rightBtnRef.value.style.background = 'linear-gradient(45deg, #FF1361, #FF8C00)';
+    leftBtnRef.value.style.background = 'rgba(255, 255, 255, 0.15)';
+    videoBtnRef.value.style.background = 'rgba(255, 255, 255, 0.15)';
+  }
+}
+
+function showvideo(){
+  videoSrc.value = '//player.bilibili.com/player.html?isOutside=true&aid=114676398628821&bvid=BV1NYMBz9ERs&cid=30478241609&p=1'
+  if (leftBtnRef.value&&rightBtnRef.value&&videoBtnRef.value) {
+    videoBtnRef.value.style.background = 'linear-gradient(45deg, #FF1361, #FF8C00)';
+    leftBtnRef.value.style.background = 'rgba(255, 255, 255, 0.15)';
+    rightBtnRef.value.style.background = 'rgba(255, 255, 255, 0.15)';
+  }
+}
 
 </script>
 
@@ -86,6 +128,8 @@
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 25%;
+  text-align: center;
 }
 .lefta:hover{
   color: white;
@@ -106,6 +150,8 @@
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 25%;
+  text-align: center;
 }
 .righta:hover{
   color: white;
@@ -118,12 +164,24 @@
   height: calc(100% - 150px - 15px); /* 调整高度计算方式，减去额外的20px用于底部间距 */
   /* background-color: blue; */
   /* background-color: rgba(0, 0, 0, 0.1); */
+  position: relative;
+  bottom: 10px;
 }
 .video-title{
   text-align: center;
-  margin: 0;
+  margin: 0 auto;
   color: whitesmoke;
-  /* background-color: aqua; */
+  width: fit-content; /* 添加这一行使h3水平居中 */
+  cursor: pointer;
+  /* background-color: blue; */
+  width: 10%;
+  border-radius: 20px;
+  background: linear-gradient(45deg, #FF1361, #FF8C00);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.video-title:hover{
+  background: linear-gradient(45deg, #FF1361, #FF8C00);
 }
 .video{
   width: 90%;
@@ -138,7 +196,10 @@ iframe{
   width: 100%;
   height: 100%;
 }
-
+.leftBtn,.rightBtn{
+  width: 20%;
+  font-size: 10px;
+}
 /* 移动端适配 */
 @media screen and (max-width: 768px) {
   .info {
