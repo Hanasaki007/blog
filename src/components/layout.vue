@@ -11,7 +11,7 @@
     </div>
     <!-- title部分 -->
     <div class="title">
-      <h1>花心愛的个人空间</h1>
+      <pre>S  P  A  C  E</pre>
     </div>
     <!-- RouterView部分 -->
      <div class="view">
@@ -27,7 +27,8 @@ import { onMounted } from 'vue';
 
 // 检测是否为移动设备
 const isMobile = () => {
-  const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+  const userAgent = navigator.userAgent || navigator.vendor || (window as { opera?: string }).opera || '';
+  if (!userAgent) return false;
   return /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase());
 };
 
@@ -75,11 +76,15 @@ body{
   height: 50px;
   flex-shrink: 0; /* 防止在flex布局中收缩 */
 }
-h1{
+pre{
   text-align: center;
-  /* background-color: blue; */
   margin: 0;
-  color: whitesmoke;
+  font-size: 50px;
+  background: linear-gradient(45deg, yellow, skyblue,red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bolder;
 }
 .view{
   flex: 1; /* 修改为flex: 1以自动填充剩余空间 */
